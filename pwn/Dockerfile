@@ -26,7 +26,7 @@ RUN apt-get install -y \
     man-db manpages-dev libtool-bin \
     libssl-dev      libffi-dev  libc6-dbg \
     libc6:i386  libc6-dbg:i386  libstdc++6:i386 \
-    libc6-dev-i386
+    libc6-dev-i386 elfutils patchelf
 
 RUN apt-get -y autoremove
 
