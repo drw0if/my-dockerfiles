@@ -69,6 +69,12 @@ RUN git clone https://github.com/pwndbg/pwndbg.git pwndbg && \
 
 RUN sudo /bin/sh -c "echo 'source /home/ubuntu/pwndbg/gdbinit.py' >> /root/.gdbinit"
 
+# instal pwninit
+RUN sudo apt install -y \
+    liblzma-dev pkg-config
+RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly -y
+RUN /bin/zsh -c ". ~/.zshrc && cargo install pwninit"
+
 # Configure tmux
 RUN echo "set -g mouse on" > ~/.tmux.conf
 RUN echo 'alias tmux="tmux -u"' >> ~/.zshrc
